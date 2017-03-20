@@ -55,15 +55,17 @@ main {
             }
         }
         .btn-Generic {
-            background: $color-white; color: $color-black; border: 1px solid $color-black; @include box-shadow(3px, 3px, 0, $color-one); @include transition(all 0.24s ease-in); width: 150px; height: 41px; padding: 0; margin: 0 0 1rem 0; text-align: center; position: relative; line-height: 2.7;
+            background: $color-white; color: $color-black; border: 1px solid $color-black; @include box-shadow(3px, 3px, 0, $color-one); @include transition(all 0.24s ease-in); width: 150px; height: 41px; padding: 0; margin: 0 0 1rem 0; text-align: center; position: relative; line-height: 2.7; overflow: hidden;
             span {
-                @include position(absolute, 0 null null 0); width: 100%; height: 100%; @include transform(translate3d(0,0,0)); text-transform: uppercase; font-weight: bolder;
+                @include position(absolute, 0 null null 0); width: 100%; height: 100%; @include transform(translate3d(0,0,0)); text-transform: uppercase; font-weight: bolder; @include transition(all 0.24s);
             }
             &:after {
-                
+                content: ''; width: 100%; height: 100%; @include position(absolute, 0 null null 0); @include transform(translate3d(0, -100%, 0)); background: url(#{$imgS}imgPrueba/police-gun-black-shape.png) center no-repeat; @include transition(all 0.24s);
             }
             &:hover {
-                background: $color-five; @include box-shadow(3px, 3px, 0, $color-three); color: $color-three;
+                background: $color-one; @include box-shadow(3px, 3px, 0, $color-white);
+                span { @include transform(translate3d(0, 100%, 0)); }
+                &:after { @include transform(translate3d(0, 0, 0)); }
             }
         }
     }

@@ -118,7 +118,7 @@
                                         <textarea rows="1" cols="1" name="mensaje" id="mensaje" placeholder="Mensaje: ¡Piu, Piu!"></textarea>
                                     </div>
                                     <div class="large-12 columns text-center">
-                                        <button class="button btn-Generic" type="submit" name="submit" id="submit">Envíar</button>
+                                        <button class="button btn-Generic" type="submit" name="submit" id="submit"><span>Envíar</span></button>
                                     </div>
                                 </div>
                             </form>
