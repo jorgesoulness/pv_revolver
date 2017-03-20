@@ -1,0 +1,74 @@
+//colors
+$color-one: #dfce00;
+$color-two: #b2a617;
+$color-three: #756c00;
+$color-four: #333333;
+$color-five: #cdcdcd;
+$color-six: #d8002e;
+//$color-seven: #a63035;
+//$color-eight: #5a605e;
+//$color-nine: #2C3745;
+//$color-ten: #f2911c;
+//$color-eleven: #fa7702;
+//$color-twelve: #a81134;
+//$color-thirteen: #f87811;
+//$color-fourteen: #0d557c;
+//$color-fifteen:#f08424;
+//$color-sixteen:#6f6f6f;
+//$color-seventeen:#3b0d0f;
+$color-black: #000000;
+$color-white: #ffffff;
+
+//Sociales
+$facebook-Hex: #3b5998;
+$twitter-Hex: #1b95e0;
+$youtube-Hex: #bb0000;
+$googleplus-Hex: #dd4b39;
+$instagram-Hex: #775226;
+$vimeo-Hex: #00bf8f;
+$vine-Hex: #48c27c;
+$linkedin-Hex: #007bb5;
+
+$imgS: '../../img/publico/';
+
+//Fonts
+@mixin font-face($style-name, $file, $family, $category) {
+    $filepath: "../../fonts/publico/" + $family + "/" + $file;
+    @font-face {
+        font-family: "#{$style-name}";
+        src: url($filepath + ".eot");
+        src: url($filepath + ".eot?#iefix") format('embedded-opentype'), url($filepath + ".woff") format('woff'), url($filepath + ".ttf")  format('truetype'), url($filepath + ".svg#" + $style-name + "") format('svg');
+    }
+    %#{$style-name} {
+        font: {	
+            @if $category != "" {
+                family: "#{$style-name}", #{$category};
+            }
+            @else {
+                family: "#{$style-name}";
+                weight: normal;
+            }
+        }
+    }
+}
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:100i,300,400,400i');//Fuente uno
+@include font-face('moon-ob', 'Moonshiner-Oblique', 'moon', 'sans-serif');//Fuente dos
+@include font-face('moon-reg', 'Moonshiner-Regular', 'moon', 'sans-serif');//Fuente tres
+$font-primary: 'Montserrat', sans-serif;//Fuente.
+$font-secondary: 'moon-ob', sans-serif;//Fuente.
+$font-third: 'moon-reg', sans-serif;//Fuente.
+
+//Anchos
+$width100: 100%;
+$width80: 80%;
+$width50: 50%;
+$width25: 25%;
+$width10: 10%;
+
+//TextShadow
+@mixin text-shadow($horizOffset, $vertOffset, $blur, $color) { -webkit-text-shadow: $horizOffset $vertOffset $blur $color; -moz-text-shadow: $horizOffset $vertOffset $blur $color; -ms-text-shadow: $horizOffset $vertOffset $blur $color; -o-text-shadow: $horizOffset $vertOffset $blur $color; text-shadow: $horizOffset $vertOffset $blur $color; }
+
+//BoxShadow
+@mixin box-shadow($horizOffset, $vertOffset, $blur, $color) { -webkit-box-shadow: $horizOffset $vertOffset $blur $color; -moz-box-shadow: $horizOffset $vertOffset $blur $color; -ms-box-shadow: $horizOffset $vertOffset $blur $color; -o-box-shadow: $horizOffset $vertOffset $blur $color; box-shadow: $horizOffset $vertOffset $blur $color; }
+
+@mixin box-shadowCom($horizOffset, $vertOffset, $blur, $nose, $color) { -webkit-box-shadow: $horizOffset $vertOffset $blur $nose $color; -moz-box-shadow: $horizOffset $vertOffset $blur $nose $color; -ms-box-shadow: $horizOffset $vertOffset $blur $nose $color; -o-box-shadow: $horizOffset $vertOffset $blur $nose $color; box-shadow: $horizOffset $vertOffset $blur $nose $color; }

@@ -1,0 +1,627 @@
+@import "_global";
+@import "bourbon";
+/* ==========================================================================
+   Author's custom LAYOUT
+   ========================================================================== */
+body, html { position: relative; font-family: $font-primary; background: $color-one; }
+//body.overflow-hidden { overflow: auto; }
+h1, h2, h3, h4, h5, h6 { font-family: $font-secondary; }
+button[disabled], html input[disabled], a[disabled] { cursor: not-allowed; }
+body.overflow-hidden { overflow: hidden; }
+.overlay { width: 100%; height: 100%; position: absolute; top: 0; left: 0; padding: 0; margin: 0; }
+.contentGen { width: 100%; position: relative; }
+.realtiveSection { position: relative; }
+.no-mar {//Row
+margin-right: 0; margin-left: 0; }
+.no-pad {//Column
+padding-right: 0; padding-left: 0; }
+
+header {
+    @include position(fixed, 0 null null 0); width: 100%; height: auto; z-index: 5000; padding: 0; margin: 0;
+    nav {
+        position: relative; @include border-bottom-radius(6px); box-sizing: border-box; -webkit-box-sizing: border-box; @include border-color(null $color-black $color-black $color-black); @include border-style(null solid solid); @include border-width(null 1px 1px 1px);
+        background: $color-white; padding: 0; margin: 0;
+        .centerMenu {
+            text-align: center; padding: 0; margin: 0;
+            ul {
+                padding: 0; margin: 0;
+                li {
+                    position: relative;
+                    a {
+                        font-family: $font-secondary; color: $color-black; font-size: 2rem; @include transition(all 0.24s ease);
+                        &:hover {
+                            color: $color-six;
+                        }
+                    }
+                }
+                li.active {
+                    a { color: $color-one; }
+                }
+            }
+        }
+        .centerMenu > .menu {
+            display: inline-block;
+        }
+    }
+}
+main {
+    margin: 0; padding: 0;
+    section[class^="section"] {
+        overflow: hidden;
+        .intSection {
+            @include position(absolute, 50% null null 0); @include transform(translate3d(0, -50%, 0)); width: 100%; height: auto; padding: 0; margin: 0; z-index: 3; 
+            figure {
+                padding: 0; margin: 0; 
+            }
+        }
+        .btn-Generic {
+            background: $color-white; color: $color-black; border: 1px solid $color-black; @include box-shadow(3px, 3px, 0, $color-one); @include transition(all 0.24s ease-in); width: 150px; height: 41px; padding: 0; margin: 0 0 1rem 0; text-align: center; position: relative; line-height: 2.7;
+            span {
+                @include position(absolute, 0 null null 0); width: 100%; height: 100%; @include transform(translate3d(0,0,0)); text-transform: uppercase; font-weight: bolder;
+            }
+            &:after {
+                
+            }
+            &:hover {
+                background: $color-five; @include box-shadow(3px, 3px, 0, $color-three); color: $color-three;
+            }
+        }
+    }
+    section[class*="Inicio"] {
+        figure {
+            width: 100%; height: auto; position: relative;
+            img { width: 100%; max-width: 500px; display: block; margin: 0 auto 20px auto; padding: 0; }
+        }
+        h2 { color: $color-black; text-align: center; }
+        p { text-transform: uppercase; text-align: center; color: $color-black; font-weight: bolder; }
+        .downStep {
+            a {
+                color: $color-black; font-size: 1.5rem; @include transition(all 0.24s ease-in);
+                &:hover { color: $color-six; }
+            }
+        }
+        .over-Video {
+            @extend .overlay; z-index: 2; background: url(#{$imgS}bgs/pattern_video.png) repeat; @include transform(translate3d(0,0,0));
+        }
+        video {
+            @include position(absolute, 0 0 0 0); width: 100%; height: 100%; background-size: contain; object-fit: cover; z-index: 1; background-size: 100% 100%; background-color: black; background-position: center center;
+        }
+    }
+    section[class*="about"] {
+        background: url(#{$imgS}bgs/aboutBg.jpg) no-repeat; background-size: cover; object-fit: cover;
+        h2 {
+            color: $color-one; text-align: center; margin-bottom: 1.5rem; font-size: 2.5rem; display: inline-block; position: relative;
+            &:after { content: ''; width: 45px; height: 45px; background: url(#{$imgS}imgPrueba/Capa-7-copia.png) no-repeat; @include position(absolute, 50% null null -50px); @include transform(translateY(-50%)); display: none; }
+            &:before { content: ''; width: 45px; height: 45px; background: url(#{$imgS}imgPrueba/Capa-7-copia.png) no-repeat; @include position(absolute, 50% -50px null null); @include transform(translateY(-50%)); display: none; }
+        }
+        p {
+            text-transform: uppercase; text-align: center; color: $color-white; font-weight: bolder;
+            span { color: $color-one; }
+        }
+    }
+    section[class*="diWeb"] {
+        background: url(#{$imgS}bgs/pattern_disenoweb.png) repeat;
+        h2 { color: $color-white; @include text-shadow(3px, 3px, 0px, $color-black); text-align: center; margin-bottom: 1.5rem; font-size: 2.5rem; margin-top: 0; }
+        p { text-transform: uppercase; text-align: center; color: $color-black; font-weight: bolder; }
+        figure {
+            margin-bottom: 20px;
+            img {
+                width: 100%; max-width: 450px; height: auto; margin: 0 auto; padding: 0; display: block;
+            }
+        }
+    }
+    section[class*="bramding"] {
+        background: url(#{$imgS}bgs/brandBg.jpg) no-repeat; background-size: cover;
+        h2 { color: $color-white; @include text-shadow(3px, 3px, 0px, $color-black); text-align: center; margin-bottom: 1.5rem; font-size: 2.5rem; margin-top: 0; }
+        p { text-transform: uppercase; text-align: center; color: $color-one; font-weight: bolder; }
+        figure {
+            @include position(absolute, 0 0 null null); z-index: 1; width: auto; height: 100%; margin: 0; padding: 0;
+            img {
+                width: auto; height: 100%; margin: 0 auto; padding: 0; display: block;
+            }
+        }
+    }
+    section[class*="socMedia"] {
+        background: url(#{$imgS}bgs/pattern_disenoweb.png) repeat;
+        h2 { color: $color-white; @include text-shadow(3px, 3px, 0px, $color-black); text-align: center; margin-bottom: 1.5rem; font-size: 2.5rem; margin-top: 0; }
+        p { text-transform: uppercase; text-align: center; color: $color-black; font-weight: bolder; }
+        figure {
+            padding: 0; margin: 0 0 2rem 0; width: 100%; height: auto; position: relative;
+            img {
+                width: 100%; height: auto; margin: 0 auto; padding: 0; display: block;
+            }
+        }
+        .hand-fb{
+  animation: HandsMoves linear 1.2s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  -webkit-animation: HandsMoves linear 1.2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: HandsMoves linear 1.2s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: HandsMoves linear 1.2s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 50% 50%;
+  -ms-animation: HandsMoves linear 1.2s;
+  -ms-animation-iteration-count: infinite;
+  -ms-transform-origin: 50% 50%;
+}
+
+@keyframes HandsMoves{
+  0% {
+    transform:  translate(0px,0px)  ;
+  }
+  15% {
+    transform:  translate(0px,-25px)  ;
+  }
+  30% {
+    transform:  translate(0px,0px)  ;
+  }
+  45% {
+    transform:  translate(0px,-15px)  ;
+  }
+  60% {
+    transform:  translate(0px,0px)  ;
+  }
+  75% {
+    transform:  translate(0px,-5px)  ;
+  }
+  100% {
+    transform:  translate(0px,0px)  ;
+  }
+}
+
+@-moz-keyframes HandsMoves{
+  0% {
+    -moz-transform:  translate(0px,0px)  ;
+  }
+  15% {
+    -moz-transform:  translate(0px,-25px)  ;
+  }
+  30% {
+    -moz-transform:  translate(0px,0px)  ;
+  }
+  45% {
+    -moz-transform:  translate(0px,-15px)  ;
+  }
+  60% {
+    -moz-transform:  translate(0px,0px)  ;
+  }
+  75% {
+    -moz-transform:  translate(0px,-5px)  ;
+  }
+  100% {
+    -moz-transform:  translate(0px,0px)  ;
+  }
+}
+
+@-webkit-keyframes HandsMoves {
+  0% {
+    -webkit-transform:  translate(0px,0px)  ;
+  }
+  15% {
+    -webkit-transform:  translate(0px,-25px)  ;
+  }
+  30% {
+    -webkit-transform:  translate(0px,0px)  ;
+  }
+  45% {
+    -webkit-transform:  translate(0px,-15px)  ;
+  }
+  60% {
+    -webkit-transform:  translate(0px,0px)  ;
+  }
+  75% {
+    -webkit-transform:  translate(0px,-5px)  ;
+  }
+  100% {
+    -webkit-transform:  translate(0px,0px)  ;
+  }
+}
+
+@-o-keyframes HandsMoves {
+  0% {
+    -o-transform:  translate(0px,0px)  ;
+  }
+  15% {
+    -o-transform:  translate(0px,-25px)  ;
+  }
+  30% {
+    -o-transform:  translate(0px,0px)  ;
+  }
+  45% {
+    -o-transform:  translate(0px,-15px)  ;
+  }
+  60% {
+    -o-transform:  translate(0px,0px)  ;
+  }
+  75% {
+    -o-transform:  translate(0px,-5px)  ;
+  }
+  100% {
+    -o-transform:  translate(0px,0px)  ;
+  }
+}
+
+@-ms-keyframes HandsMoves {
+  0% {
+    -ms-transform:  translate(0px,0px)  ;
+  }
+  15% {
+    -ms-transform:  translate(0px,-25px)  ;
+  }
+  30% {
+    -ms-transform:  translate(0px,0px)  ;
+  }
+  45% {
+    -ms-transform:  translate(0px,-15px)  ;
+  }
+  60% {
+    -ms-transform:  translate(0px,0px)  ;
+  }
+  75% {
+    -ms-transform:  translate(0px,-5px)  ;
+  }
+  100% {
+    -ms-transform:  translate(0px,0px)  ;
+  }
+}
+    }
+    section[class*="design"] {
+        h2 { color: $color-white; @include text-shadow(3px, 3px, 0px, $color-black); text-align: center; margin-bottom: 1.5rem; font-size: 2.5rem; margin-top: 0; }
+        p { text-transform: uppercase; text-align: center; color: $color-black; font-weight: bolder; }
+        ul {
+            list-style: none;
+            li {
+                padding-left: 0; color: $color-one; text-align: center;
+                a { color: $color-one; }
+                &:before {
+                     content: "\f00d"; font-family:'FontAwesome'; padding-right: 8px; color: $color-one;
+                }
+            }
+        }
+        figure {
+            padding: 0; margin: 0 0 2rem 0; width: 100%; height: auto; position: relative;
+            img {
+                width: 100%; height: auto; margin: 0 auto; padding: 0; display: block;
+            }
+        }
+        .overBGDesign {
+            @include position(absolute, null null 20px 0); width: 100%; height: 3px; padding: 0; margin: 0; background: url(#{$imgS}bgs/revolver-dot.jpg) repeat-x;
+        }
+    }
+    section[class*="contactUs"] {
+        background: url(#{$imgS}bgs/pattern_disenoweb.png) repeat;
+        h2 { color: $color-white; @include text-shadow(3px, 3px, 0px, $color-black); text-align: center; margin-bottom: 1.5rem; font-size: 2.5rem; margin-top: 0; }
+        p { text-transform: uppercase; text-align: center; color: $color-black; font-weight: bolder; a { color: $color-black; } }
+        form {
+            input, textarea { @include border-top-radius(6px); @include border-bottom-radius(6px); border: none; @include box-shadowCom(inset, 0px, 0px, 5px, rgba(0,0,0,0.5)); }
+        }
+    }
+    section[class*="testimonio"] {
+        article {
+            text-align: center; position: relative; width: 100%; height: auto;
+            h2 { color: $color-one; margin-bottom: 1.5rem; font-size: 2.5rem; margin-top: 0; }
+            p { text-transform: uppercase; color: $color-white; font-weight: bolder; }
+            &:after { content: ''; width: 57px; height: 57px; background: url(#{$imgS}imgPrueba/equis-incon.png) no-repeat; @include position(absolute, 50% null null -65px); @include transform(translateY(-50%)); display: none; }
+            &:before { content: ''; width: 57px; height: 57px; background: url(#{$imgS}imgPrueba/equis-incon.png) no-repeat; @include position(absolute, 50% -65px null null); @include transform(translateY(-50%)); display: none; }
+        }
+        .overBG {
+            @include position(absolute, 20px null null 0); width: 100%; height: 3px; padding: 0; margin: 0; background: url(#{$imgS}bgs/revolver-dot.jpg) repeat-x;
+        }
+    }
+}
+//Menuright
+#fp-nav  {
+    ul {
+        li {
+            a.active { span { background: $color-six; } }
+        }
+    }
+}
+footer {
+    @include position(fixed, null null 0 0); width: 100%; height: auto; background: $color-white; padding: .5rem 0;
+    .textoAlineado { text-align: center; }
+    figure {
+        width: auto; height: auto; display: inline-block; padding: .3rem .5rem 0 .5rem; margin: 0;
+        img {
+            display: block; width: 100%; max-width: 50px;
+        }
+    }
+    p {
+        margin-bottom: 0; text-transform: uppercase; text-align: center; display: inline-block;
+    }
+    a {
+        color: $color-black; margin: 0 .5rem; padding: 0; @include transition(all 0.24s ease-in);
+        &:hover {
+            color: $color-six;
+        }
+    }
+}
+
+/* Diseño tableta: de 481 px a 768 px. Hereda estilos de: Diseño móvil. */
+@media only screen and (min-width: 360px) {
+header {
+    
+}
+main {
+    
+}
+footer {
+    
+}
+
+
+}
+
+
+@media only screen and (min-width: 480px) {
+header {
+    
+}
+main {
+    section[class*="about"] {
+        h2 { font-size: 2.6rem; }
+    }
+    section[class*="diWeb"] {
+        h2 { font-size: 2.6rem; }
+    }
+    section[class*="bramding"] {
+        h2 { font-size: 2.6rem; }
+    }
+    section[class*="socMedia"] {
+        h2 { font-size: 2.6rem; }
+    }
+    section[class*="design"] {
+        h2 { font-size: 2.6rem; }
+    }
+     section[class*="contactUs"] {
+        h2 { font-size: 2rem; }
+    }
+}
+footer {
+    
+}
+
+
+}
+
+@media only screen and (min-width: 640px) { 
+header {
+    nav {
+        .centerMenu {
+            ul {
+                li {
+                    a {
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+main {
+    section[class*="diWeb"] {
+        h2 { margin-top: 2rem; }
+    }
+    section[class*="bramding"] {
+        h2 { margin-top: 1.6rem; }
+    }
+    section[class*="socMedia"] {
+        h2 { margin-top: 1.6rem; }
+    }
+    section[class*="design"] {
+        h2 { margin-top: 1.6rem; text-align: left; }
+        ul {
+            li {
+                padding-left: 16px; text-align: left;
+            }
+        }
+    }
+     section[class*="contactUs"] {
+        h2 { font-size: 1.6rem; }
+    }
+    section[class*="testimonio"] {
+        article {
+            &:after { display: block; }
+            &:before { display: block; }
+        }
+    }
+}
+footer {
+    .textoAlineado { text-align: left; }
+    p {
+        text-align: left;
+    }
+}
+
+
+}
+
+@media only screen and (min-width: 768px) {
+header {
+    nav {
+        .centerMenu {
+            ul {
+                li {
+                    a {
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+        }
+    }
+}
+main {
+    section[class*="about"] {
+        h2 { font-size: 2.8rem; }
+    }
+    section[class*="diWeb"] {
+        h2 { font-size: 2.8rem; margin-top: 2.5rem; }
+    }
+    section[class*="bramding"] {
+        h2 { font-size: 2.8rem; margin-top: 2rem; }
+    }
+    section[class*="socMedia"] {
+        h2 { font-size: 2.8rem; margin-top: 2.5rem; }
+    }
+    section[class*="design"] {
+        h2 { font-size: 2.8rem; margin-top: 2.5rem; }
+    }
+     section[class*="contactUs"] {
+        h2 { font-size: 2.8rem; }
+    }
+}
+footer {
+    
+}
+
+
+}
+
+@media only screen and (min-width: 800px) {
+header {
+    
+}
+main {
+    
+}
+footer {
+    
+}
+
+
+}
+
+@media only screen and (min-width: 960px) {
+header {
+    
+}
+main {
+    
+}
+footer {
+    
+}
+
+
+}
+
+/*mediaquery desktop 2*/
+@media only screen and (min-width: 1024px) {
+header {
+    nav {
+        .centerMenu {
+            ul {
+                li {
+                    a {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+main {
+    section[class*="about"] {
+        h2 { font-size: 3.5rem; }
+    }
+    section[class*="diWeb"] {
+        h2 { font-size: 3.5rem; margin-top: 4rem; }
+    }
+    section[class*="bramding"] {
+        background: none;
+        h2 { font-size: 3.5rem; margin-top: 2.6rem; }
+    }
+    section[class*="socMedia"] {
+        h2 { font-size: 3.5rem; margin-top: 2.6rem; }
+    }
+    section[class*="design"] {
+        h2 { font-size: 3.5rem; margin-top: 2.6rem; }
+    }
+     section[class*="contactUs"] {
+        h2 { font-size: 3.5rem; }
+    }
+    section[class*="testimonio"] {
+        article {
+            text-align: center;
+            h2 { font-size: 3.5rem; }
+        }
+    }
+}
+footer {
+    
+}
+
+
+}
+
+/*mediaquery desktop 2*/
+@media only screen and (min-width: 1100px) {
+header {
+    
+}
+main {
+    
+}
+footer {
+    
+}   
+
+
+}
+
+/*mediaquery desktop 2*/
+@media only screen and (min-width: 1200px) {
+header {
+    
+}
+main {
+    section[class*="about"] {
+        h2 { font-size: 4rem; }
+    }
+    section[class*="diWeb"] {
+        h2 { font-size: 4rem; margin-top: 5rem; }
+    }
+    section[class*="bramding"] {
+        h2 { font-size: 4rem; margin-top: 3rem; }
+    }
+    section[class*="socMedia"] {
+        h2 { font-size: 4rem; margin-top: 3rem; }
+    }
+    section[class*="design"] {
+        h2 { font-size: 4rem; margin-top: 4rem; }
+    }
+    section[class*="contactUs"] {
+        h2 { font-size: 4rem; }
+    }
+    section[class*="testimonio"] {
+        article {
+            text-align: center;
+            h2 { font-size: 4rem; }
+        }
+    }
+}
+footer {
+    
+}   
+
+
+}
+
+/*mediaquery desktop 2*/
+@media only screen and (min-width: 1280px) {
+header {
+    
+}
+main {
+    
+}
+footer {
+    
+}
+
+
+}

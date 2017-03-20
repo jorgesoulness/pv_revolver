@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /revo/maqueta/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([a-zA-Z0-9-_]*)/?$ index.php?sec=$1
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+</IfModule>
+
+<FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|ttf|woff2|woff|svg|eot)$">
+  Header set Cache-Control "max-age=2592000, public, must-revalidate"
+  Header unset Last-Modified
+</FilesMatch>
+
+<FilesMatch "\.(html|htm|xml|txt|xsl|js|css|php)$">
+  Header set Cache-Control "max-age=2592000, must-revalidate"
+</FilesMatch>
