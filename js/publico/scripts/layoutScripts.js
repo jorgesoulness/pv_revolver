@@ -1,6 +1,12 @@
 //Scripts layoutScripts v1.0
 $(document).ready(function() {
-    
+    var wow =  new WOW({
+        boxClass: 'wow',      // default
+        animateClass: 'animated', // default
+        offset: 0,          // default
+        mobile: true,       // default
+        live: false        // default
+    });
     $('#pageFullRevolver').fullpage({
         verticalCentered: true,
         sectionsColor: ['#dfce00', '#000000', '#dfce00', '#000000', '#dfce00', '#000000', '#dfce00', '#000000'],
@@ -16,10 +22,9 @@ $(document).ready(function() {
         navigation: true,
         paddingTop: '20px',
         easingcss3: 'cubic-bezier(0.760, 0.005, 0.290, 1.005)',
-        scrollingSpeed: 1000,
-        responsiveHeight: 600,
-        afterLoad: function(anchorLink, index){
-				
+        scrollBar: true,
+        afterRender: function(index, anchor){
+             wow.init();
         }
     });
 

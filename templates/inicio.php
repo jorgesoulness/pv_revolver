@@ -22,7 +22,7 @@
             <section class="section about " id="section1">
                 <div class="intSection">
                     <div class="row">
-                        <div class="medium-10 medium-offset-1 large-8 large-offset-2 columns text-center">
+                        <div class="medium-10 medium-offset-1 large-8 large-offset-2 columns text-center wow bounceInDown" data-wow-delay="0.8s" data-wow-duration="0.65s">
                             <h2>QUIENES SOMOS</h2>
                             <p>Revolver es UN ESTUDIO ESPECIALIZADO EN <span>DISEÑO WEB y branding</span>, TRABAJAMOS CON ORDEN,creatividad e imaginación.<br><br>Donde pongas el ojo ponemos el bullet, el copy, el diseño, la identidad y TODO lo necesario para ser la envidia del pueblo, BUSCAMOS EL OBJETIVO Y LO EJECUTAMOS.</p>
                             <div class="text-center">
@@ -35,14 +35,17 @@
             <section class="section diWeb " id="section2">
                 <div class="intSection">
                     <div class="row">
-                        <div class="medium-6 large-6 columns">
+                        <div class="medium-6 large-6 columns wow zoomInLeft" data-wow-delay="0.6s" data-wow-duration="0.65s">
                             <figure>
                                 <img src="<?php echo get_template_directory_uri(''); ?>img/publico/imgPrueba/mac_revolver.png" alt="Diseño web">
                             </figure>
                         </div>
-                        <div class="medium-6 large-6 columns">
+                        <div class="medium-6 large-6 columns wow bounceInRight" data-wow-delay="0.8s" data-wow-duration="0.85s">
                             <h2>Diseño web</h2>
                             <p>Revolver se especializa en crear sitios web FUNCIONALES, Nuestros principales objetivos son; diseño contenido y resultados.</p>
+                            <div class="text-center">
+                                <a class="button btn-Generic" href=""><span>Ver portafolio</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -50,9 +53,12 @@
             <section class="section bramding " id="section3">
                 <div class="intSection">
                     <div class="row">
-                        <div class="large-6 columns">
+                        <div class="large-6 columns wow bounceInLeft" data-wow-delay="0.6s" data-wow-duration="0.65s">
                             <h2>Branding</h2>
                             <p>Nos aseguramos de que tu empresa se vea mejor de lo que tenías en mente, construimos marcas para toda clase de mercadOs.</p>
+                            <div class="text-center">
+                                <a class="button btn-Generic" href=""><span>Ver portafolio</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -63,11 +69,14 @@
             <section class="section socMedia " id="section4">
                 <div class="intSection">
                     <div class="row">
-                        <div class="medium-7 medium-push-5 large-6 large-push-6 columns">
+                        <div class="medium-7 medium-push-5 large-6 large-push-6 columns wow bounceInRight" data-wow-delay="0.8s" data-wow-duration="0.95s">
                             <h2>Redes Sociales</h2>
                             <p>POSICIONAMOS TU FANPAGE, aumentamos likes mediante posicionamiento orgánico con contenido original o mediante campañas digitales.</p>
+                            <div class="text-center">
+                                <a class="button btn-Generic" href=""><span>Ver portafolio</span></a>
+                            </div>
                         </div>
-                        <div class="medium-5 medium-pull-7 large-6 large-pull-6 columns">
+                        <div class="medium-5 medium-pull-7 large-6 large-pull-6 columns wow zoomInLeft" data-wow-delay="0.6s" data-wow-duration="0.65s">
                             <figure>
                                 <img class="hand-fb" src="<?php echo get_template_directory_uri(); ?>img/publico/imgPrueba/fb_like_hand.png" alt="Redes Sociales">
                             </figure>
@@ -78,7 +87,7 @@
             <section class="section design " id="section5">
                 <div class="intSection">
                     <div class="row">
-                        <div class="medium-5 large-5 columns">
+                        <div class="medium-5 large-5 columns wow bounceInLeft" data-wow-delay="0.8s" data-wow-duration="0.95s">
                             <h2>Diseño Gráfico</h2>
                             <ul>
                                 <li>Branding</li>
@@ -87,8 +96,11 @@
                                 <li>Ilustración</li>
                                 <li>Publicidad Impresa</li>
                             </ul>
+                            <div class="text-center">
+                                <a class="button btn-Generic" href=""><span>Ver portafolio</span></a>
+                            </div>
                         </div>
-                        <div class="medium-7 large-7 columns">
+                        <div class="medium-7 large-7 columns wow zoomInLeft" data-wow-delay="0.6s" data-wow-duration="0.65s">
                             <figure>
                                 <img src="<?php echo get_template_directory_uri(''); ?>img/publico/imgPrueba/taza_pantone.png" alt="Diseño Grafico">
                             </figure>
@@ -129,7 +141,7 @@
             <section class="section testimonio " id="section7">
                 <div class="intSection">
                     <div class="row">
-                        <div class="medium-8 medium-offset-2 large-6 large-offset-3 columns">
+                        <div class="medium-8 medium-offset-2 large-6 large-offset-3 columns wow flipInY" data-wow-delay="0.6s" data-wow-duration="0.65s">
                             <article>
                                 <p>"No creo en el pesimismo. Si las cosas no salieron como lo esperabas, sigue adelante. Si te empeñas lo consigues. Si crees que va a llover, lloverá".</p>
                                 <h2>Clint Eastwood</h2>
